@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Zapienz by Socrates AI</title>
+  <meta name="description" content="Learn about Socrates AI, the company behind Zapienz — the first AI platform designed specifically for children ages 5–12, with real-time parental controls and safety alerts." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:  '#1B2F6E',
+            brand: '#E8323C',
+            sky:   '#6BB8E8',
+            light: '#F5F7FB',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; color: #2D2D2D; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #1B2F6E 0%, #0f1f4a 60%, #1a3a7a 100%);
+    }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(27, 47, 110, 0.15);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 2px;
+      background: #E8323C;
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { transform: scaleX(1); }
+    .nav-link.active { color: #1B2F6E; font-weight: 600; }
+
+    .section-badge {
+      display: inline-block;
+      background: #EEF2FF;
+      color: #1B2F6E;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body class="bg-white font-body">
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Zapienz logo" class="h-12 w-auto" />
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link active">About</a></li>
+        <li><a href="features.html" class="nav-link">Features</a></li>
+        <li><a href="team.html"     class="nav-link">Team</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="contact.html"
+         class="hidden md:inline-flex items-center gap-2 bg-brand text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-red-700 transition-colors">
+        Get in Touch
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden p-2 rounded text-navy" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 text-sm text-gray-700">
+      <a href="index.html"    class="block hover:text-navy">Home</a>
+      <a href="about.html"    class="block font-semibold text-navy">About</a>
+      <a href="features.html" class="block hover:text-navy">Features</a>
+      <a href="team.html"     class="block hover:text-navy">Team</a>
+      <a href="contact.html"  class="block hover:text-navy">Contact</a>
+      <a href="contact.html"  class="inline-block mt-2 bg-brand text-white px-5 py-2 rounded-full font-semibold">Get in Touch</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero-gradient pt-28 pb-16 px-6 text-white overflow-hidden relative">
+    <div class="absolute top-10 right-10 w-64 h-64 rounded-full opacity-10" style="background: #6BB8E8;"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-10" style="background: #E8323C;"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <span class="inline-block bg-white/10 text-sky text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        Our Story
+      </span>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold leading-tight mb-5 max-w-2xl">
+        Building the Future of<br/><span class="text-sky">AI for Children.</span>
+      </h1>
+      <p class="text-white/80 text-lg leading-relaxed max-w-2xl">
+        Socrates AI is an Argentine technology startup founded in 2026 — standing at the intersection
+        of education, technology, parenting, and ethics. We built Zapienz because children are already
+        using AI, and they deserve a safe place to do it.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       MISSION & VISION
+  ═══════════════════════════════════════ -->
+  <section class="bg-light py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="section-badge">Purpose</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+          Mission &amp; Vision
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Mission -->
+        <div class="bg-navy text-white rounded-2xl p-10 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-2xl font-bold mb-4">Our Mission</h3>
+          <p class="text-white/80 leading-relaxed text-lg">
+            Provide a safe and educational AI exploration tool for children ages 5 to 12.
+            Facilitate learning and personal development through the use of artificial intelligence —
+            without creating dependency on it.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-white rounded-2xl p-10 card-hover border border-gray-100" style="border-top: 4px solid #6BB8E8;">
+          <div class="w-12 h-12 rounded-xl bg-sky/20 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-navy mb-4">Our Vision</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            Make Zapienz the leading AI for children in Latin America and worldwide, delivering
+            innovation, safety, and control in every interaction.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       THE PROBLEM
+  ═══════════════════════════════════════ -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="section-badge">The Problem We Solve</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+          Children are already online.<br/>The world hasn't caught up.
+        </h2>
+        <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+          Parents are left without tools. Schools are behind. And no existing application alerts
+          a parent if their child is experiencing bullying, grooming, or emotional distress through
+          an AI interaction — until now.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-light rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy mb-3">Online Risks</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Children are exposed to inappropriate content and lack access to safe, age-appropriate
+            AI tools built with their wellbeing in mind.
+          </p>
+        </div>
+
+        <div class="bg-light rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy mb-3">Lack of Control</h3>
+          <p class="text-gray-600 leading-relaxed">
+            No AI platform currently gives parents meaningful oversight of what their children
+            are doing and asking. Parents are in the dark.
+          </p>
+        </div>
+
+        <div class="bg-light rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-sky/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy mb-3">Lack of Personalization</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Educational tools fail to adapt to each child's individual needs, limiting development
+            and making learning feel generic and disconnected.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       COGNITIVE SOVEREIGNTY
+  ═══════════════════════════════════════ -->
+  <section class="bg-navy py-20 px-6 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-white/10 text-sky text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        Our Philosophy
+      </span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
+        Why "Cognitive Sovereignty"?
+      </h2>
+      <blockquote class="text-white/80 text-xl md:text-2xl leading-relaxed italic mb-10 border-l-4 border-sky pl-6 text-left max-w-3xl mx-auto">
+        "We are not building an app. We are designing how the next generation will coexist
+        with artificial intelligence."
+      </blockquote>
+      <p class="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        Our mission is not to teach children how to use AI. Our mission is to form children who
+        <strong class="text-white">understand AI without depending on it.</strong>
+        Children who grow up with Zapienz will be more critical thinkers, more creative problem-solvers,
+        more autonomous learners — and more human.
+      </p>
+
+      <div class="grid sm:grid-cols-4 gap-6 text-center">
+        <div class="bg-white/10 rounded-2xl p-6">
+          <p class="font-heading font-bold text-white text-2xl md:text-3xl leading-tight">Critical Thinkers</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-6">
+          <p class="font-heading font-bold text-white text-2xl md:text-3xl leading-tight">Creative Problem-Solvers</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-6">
+          <p class="font-heading font-bold text-white text-xl md:text-2xl leading-tight">Autonomous Learners</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-6">
+          <p class="font-heading font-bold text-white text-2xl md:text-3xl leading-tight">Evolving Humans</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       MARKET OPPORTUNITY
+  ═══════════════════════════════════════ -->
+  <section class="bg-light py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="section-badge">Market Opportunity</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+          A massive, underserved market.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 text-center">
+        <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+          <p class="font-heading text-4xl font-bold text-navy">1.9M</p>
+          <p class="text-gray-500 text-sm mt-2">Children ages 5–12<br/>in Argentina</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+          <p class="font-heading text-4xl font-bold text-navy">570M</p>
+          <p class="text-gray-500 text-sm mt-2">Children ages 5–12<br/>globally</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 col-span-2 md:col-span-1">
+          <p class="font-heading text-4xl font-bold text-navy">$230M</p>
+          <p class="text-gray-500 text-sm mt-2">Estimated annual<br/>market value</p>
+        </div>
+      </div>
+
+      <!-- Revenue model -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100">
+        <h3 class="font-heading text-xl font-bold text-navy mb-5">Revenue Model</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-navy/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy">B2B Institutional</p>
+              <p class="text-gray-500 text-sm mt-1">$16 USD/month or $160 USD/year per license for schools and institutions.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-sky/20 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-5 h-5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy">Freemium</p>
+              <p class="text-gray-500 text-sm mt-1">Free tier supported by ads — accessible to all families from day one.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy">Premium</p>
+              <p class="text-gray-500 text-sm mt-1">$20 USD/month or $200 USD/year — full features, no ads, priority support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       TRACTION
+  ═══════════════════════════════════════ -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <span class="section-badge">Traction</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+        Already trusted by institutions<br/>that put children first.
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-light rounded-2xl p-8 text-center card-hover border border-gray-100">
+        <div class="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+          </svg>
+        </div>
+        <h4 class="font-heading font-bold text-navy">Telecentro</h4>
+        <p class="text-gray-500 text-sm mt-2">Distribution &amp; deployment partner — one of Argentina's leading internet providers.</p>
+      </div>
+
+      <div class="bg-light rounded-2xl p-8 text-center card-hover border border-gray-100">
+        <div class="w-14 h-14 rounded-full bg-sky/20 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          </svg>
+        </div>
+        <h4 class="font-heading font-bold text-navy">Ministry of Education</h4>
+        <p class="text-gray-500 text-sm mt-2">Buenos Aires City — institutional validation for deployment in public schools.</p>
+      </div>
+
+      <div class="bg-light rounded-2xl p-8 text-center card-hover border border-gray-100">
+        <div class="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <h4 class="font-heading font-bold text-navy">Schools</h4>
+        <p class="text-gray-500 text-sm mt-2">Partner schools actively signing up for early access and institutional licensing.</p>
+      </div>
+
+    </div>
+
+    <!-- Seed funding callout -->
+    <div class="max-w-xl mx-auto text-center bg-navy text-white rounded-2xl p-8">
+      <p class="font-heading text-4xl font-bold text-sky mb-2">$40,000</p>
+      <p class="text-white/80">Seed funding from angel investors at <strong class="text-white">Láser Argentina</strong> — validating our vision and market potential.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CTA STRIP
+  ═══════════════════════════════════════ -->
+  <section class="bg-brand py-16 px-6 text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-heading text-3xl font-bold mb-4">Ready to learn more?</h2>
+      <p class="text-white/80 mb-8">Explore everything Zapienz can do, or reach out directly — we'd love to hear from you.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="features.html"
+           class="bg-white text-brand font-semibold px-7 py-3 rounded-full hover:bg-light transition-colors">
+          See All Features
+        </a>
+        <a href="contact.html"
+           class="border border-white/60 text-white font-semibold px-7 py-3 rounded-full hover:bg-white/10 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="bg-navy text-white py-14 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+
+        <div>
+          <img src="assets/images/logo.png" alt="Zapienz" class="h-14 w-auto mb-4 brightness-0 invert" />
+          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+            Zapienz is the first AI platform designed specifically for children ages 5–12,
+            with real-time parental controls and safety alerts.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-heading font-semibold mb-4 text-sm tracking-wider uppercase text-white/50">Navigation</h5>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html"    class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+            <li><a href="team.html"     class="hover:text-white transition-colors">Our Team</a></li>
+            <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-heading font-semibold mb-4 text-sm tracking-wider uppercase text-white/50">Contact</h5>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="mailto:info@zapienz.app" class="hover:text-white transition-colors">info@zapienz.app</a></li>
+            <li><span>+54 9 11 6111 2369</span></li>
+            <li><span>Virrey del Pino 2166, C.A.B.A.</span></li>
+            <li><span>Buenos Aires, Argentina</span></li>
+            <li class="pt-2">
+              <a href="https://linkedin.com/in/feradria" target="_blank" rel="noopener"
+                 class="hover:text-sky transition-colors">LinkedIn — Adrian Fernandez</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@ZapienzAI" target="_blank" rel="noopener"
+                 class="hover:text-sky transition-colors">YouTube — @ZapienzAI</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>© 2026 Socrates AI. All rights reserved.</p>
+        <p>Zapienz — Artificial intelligence for kids.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => menu.classList.add('hidden'));
+    });
+  </script>
+
+</body>
+</html>
+                                                                                       

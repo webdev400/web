@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — Zapienz by Socrates AI</title>
+  <meta name="description" content="Explore every feature Zapienz offers: age-appropriate AI, dual child/parent interfaces, Red Flags alert system, personalized education, and more." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:  '#1B2F6E',
+            brand: '#E8323C',
+            sky:   '#6BB8E8',
+            light: '#F5F7FB',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; color: #2D2D2D; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #1B2F6E 0%, #0f1f4a 60%, #1a3a7a 100%);
+    }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(27, 47, 110, 0.15);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 2px;
+      background: #E8323C;
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { transform: scaleX(1); }
+    .nav-link.active { color: #1B2F6E; font-weight: 600; }
+
+    .section-badge {
+      display: inline-block;
+      background: #EEF2FF;
+      color: #1B2F6E;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .phone-shadow {
+      filter: drop-shadow(0 20px 48px rgba(27,47,110,0.25));
+    }
+    .alert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .alert-grave  { background: #fee2e2; color: #991b1b; }
+    .alert-medio  { background: #fef3c7; color: #92400e; }
+    .alert-leve   { background: #d1fae5; color: #065f46; }
+  </style>
+</head>
+<body class="bg-white font-body">
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Zapienz logo" class="h-12 w-auto" />
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="features.html" class="nav-link active">Features</a></li>
+        <li><a href="team.html"     class="nav-link">Team</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="contact.html"
+         class="hidden md:inline-flex items-center gap-2 bg-brand text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-red-700 transition-colors">
+        Get in Touch
+      </a>
+
+      <button id="menu-btn" class="md:hidden p-2 rounded text-navy" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 text-sm text-gray-700">
+      <a href="index.html"    class="block hover:text-navy">Home</a>
+      <a href="about.html"    class="block hover:text-navy">About</a>
+      <a href="features.html" class="block font-semibold text-navy">Features</a>
+      <a href="team.html"     class="block hover:text-navy">Team</a>
+      <a href="contact.html"  class="block hover:text-navy">Contact</a>
+      <a href="contact.html"  class="inline-block mt-2 bg-brand text-white px-5 py-2 rounded-full font-semibold">Get in Touch</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero-gradient pt-28 pb-16 px-6 text-white overflow-hidden relative">
+    <div class="absolute top-10 right-10 w-64 h-64 rounded-full opacity-10" style="background: #6BB8E8;"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-10" style="background: #E8323C;"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <span class="inline-block bg-white/10 text-sky text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        Product Features
+      </span>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold leading-tight mb-5 max-w-2xl">
+        Everything Zapienz<br/><span class="text-sky">Can Do.</span>
+      </h1>
+      <p class="text-white/80 text-lg leading-relaxed max-w-2xl">
+        A complete platform built for children's safety, learning, and growth — and for the parents
+        who guide them. Every feature is purposeful, every interaction is protected.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FEATURE GRID — 6 cards
+  ═══════════════════════════════════════ -->
+  <section class="bg-light py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <span class="section-badge">Core Features</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+        Six pillars of a safer digital childhood.
+      </h2>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-sky/20 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Adapted Content</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Age-appropriate AI exploration tailored for children ages 5–12. Every response is calibrated
+          to the child's age, interests, and development stage — nothing more, nothing less.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Advanced Security</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Next-generation parental controls — configurable content filters, topic boundaries,
+          and a PIN-protected parent dashboard. Full control, always.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Dual Interface</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Two entirely separate experiences in one app. Child mode for fun, safe exploration.
+          Parent mode for monitoring, alerts, reports, and fine-grained filters.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Red Flags System</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Our proprietary AI detection system identifies signs of bullying, grooming, self-harm,
+          and abuse in conversations — and alerts parents instantly. No other platform does this.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-sky/20 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Education</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Personalized educational support based on each child's progress, interests, and learning
+          style. High-quality content that makes learning feel natural and exciting.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-navy mb-3">Skills Development</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Prepares children to understand and use AI critically — without dependence. We build
+          cognitive sovereignty: the ability to think independently in a world full of AI.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CHILD INTERFACE DEEP-DIVE
+  ═══════════════════════════════════════ -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+      <div class="flex justify-center md:justify-start">
+        <img src="assets/images/screenshots/app-chat.png"
+             alt="Zapienz child chat interface"
+             class="phone-shadow w-56 md:w-64 rounded-3xl" />
+      </div>
+
+      <div>
+        <span class="inline-block bg-sky/20 text-navy text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Child Mode</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-5">
+          A Safe AI Companion<br/>built for curiosity.
+        </h2>
+        <p class="text-gray-500 leading-relaxed mb-7">
+          The child interface is warm, engaging, and designed from the ground up for young minds.
+          Every answer is age-appropriate and educational, designed to support safe exploration.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-sky/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-sky" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Natural conversation</p>
+              <p class="text-gray-500 text-sm">Children explore and ask questions through free-form chat — no complicated menus.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-sky/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-sky" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Age-calibrated responses</p>
+              <p class="text-gray-500 text-sm">Content adapts to the child's age group — different for a 5-year-old than a 12-year-old.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-sky/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-sky" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Educational reinforcement</p>
+              <p class="text-gray-500 text-sm">Specialised AI agents for education, emotional support, moral guidance, and more.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-sky/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-sky" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Available on Android &amp; iOS</p>
+              <p class="text-gray-500 text-sm">Works on any smartphone or tablet — wherever children learn and play.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       PARENT INTERFACE DEEP-DIVE
+  ═══════════════════════════════════════ -->
+  <section class="bg-light py-20 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+      <div class="order-2 md:order-1">
+        <span class="inline-block bg-brand/10 text-brand text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Parent Mode</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-5">
+          Full Control &amp;<br/>Complete Visibility.
+        </h2>
+        <p class="text-gray-500 leading-relaxed mb-7">
+          The parent dashboard gives you everything you need to feel confident about your child's
+          AI experience — in real time, from your own PIN-protected space.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Parental control panel</p>
+              <p class="text-gray-500 text-sm">Configure topics, content filters, and conversation boundaries for each child.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Real-time alerts</p>
+              <p class="text-gray-500 text-sm">Instant push notifications when the AI detects sensitive or dangerous situations.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Activity monitoring</p>
+              <p class="text-gray-500 text-sm">Full visibility into your child's AI interactions — what they asked, what they received.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Reports &amp; summaries</p>
+              <p class="text-gray-500 text-sm">Regular digests of your child's activity, topics explored, and learning milestones.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex justify-center md:justify-end order-1 md:order-2">
+        <img src="assets/images/screenshots/app-parental-controls.png"
+             alt="Zapienz parental controls panel"
+             class="phone-shadow w-56 md:w-64 rounded-3xl" />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       TECHNOLOGY
+  ═══════════════════════════════════════ -->
+  <section class="bg-light py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="section-badge">Under the Hood</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">
+          Built on multi-agent AI architecture.
+        </h2>
+        <p class="mt-4 text-gray-500 max-w-xl mx-auto">
+          Every interaction flows through four specialised layers — each one ensuring safety,
+          accuracy, and appropriateness before a child ever sees a response.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-6">
+
+        <div class="bg-white rounded-2xl p-7 border border-gray-100 flex gap-5 items-start card-hover">
+          <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-heading font-bold flex-shrink-0 text-sm">1</div>
+          <div>
+            <h4 class="font-heading font-bold text-navy mb-2">Child Interface Agent</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Delivers safe, educational, age-appropriate AI responses in natural conversation.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-gray-100 flex gap-5 items-start card-hover">
+          <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-heading font-bold flex-shrink-0 text-sm">2</div>
+          <div>
+            <h4 class="font-heading font-bold text-navy mb-2">Parental Control System</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Configures the ethical and content parameters of each conversation based on parent settings.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-gray-100 flex gap-5 items-start card-hover">
+          <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-heading font-bold flex-shrink-0 text-sm">3</div>
+          <div>
+            <h4 class="font-heading font-bold text-navy mb-2">Post-Processing Layer</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Verifies parental controls and detects sensitive content in real time before delivery.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-gray-100 flex gap-5 items-start card-hover">
+          <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-heading font-bold flex-shrink-0 text-sm">4</div>
+          <div>
+            <h4 class="font-heading font-bold text-navy mb-2">Specialised AI Agents</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Dedicated agents for education, emotional containment, moral guidance, and Red Flags detection.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       EARLY ACCESS
+  ═══════════════════════════════════════ -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-badge">Early Access</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+        Join Our Early Access Programme
+      </h2>
+      <p class="text-gray-500 mb-8 max-w-xl mx-auto">
+        Zapienz is currently in early access in Argentina. If you're a parent, school, or institution
+        interested in being among the first to experience Zapienz, get in touch with our team.
+      </p>
+      <a href="contact.html"
+         class="inline-flex items-center gap-2 bg-brand text-white font-semibold px-8 py-4 rounded-full hover:bg-red-700 transition-colors text-lg">
+        Request Early Access
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="bg-navy text-white py-14 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+
+        <div>
+          <img src="assets/images/logo.png" alt="Zapienz" class="h-14 w-auto mb-4 brightness-0 invert" />
+          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+            Zapienz is the first AI platform designed specifically for children ages 5–12,
+            with real-time parental controls and safety alerts.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-heading font-semibold mb-4 text-sm tracking-wider uppercase text-white/50">Navigation</h5>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html"    class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+            <li><a href="team.html"     class="hover:text-white transition-colors">Our Team</a></li>
+            <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-heading font-semibold mb-4 text-sm tracking-wider uppercase text-white/50">Contact</h5>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="mailto:info@zapienz.app" class="hover:text-white transition-colors">info@zapienz.app</a></li>
+            <li><span>+54 9 11 6111 2369</span></li>
+            <li><span>Virrey del Pino 2166, C.A.B.A.</span></li>
+            <li><span>Buenos Aires, Argentina</span></li>
+            <li class="pt-2">
+              <a href="https://linkedin.com/in/feradria" target="_blank" rel="noopener"
+                 class="hover:text-sky transition-colors">LinkedIn — Adrian Fernandez</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@ZapienzAI" target="_blank" rel="noopener"
+                 class="hover:text-sky transition-colors">YouTube — @ZapienzAI</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>© 2026 Socrates AI. All rights reserved.</p>
+        <p>Zapienz — Artificial intelligence for kids.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => menu.classList.add('hidden'));
+    });
+  </script>
+
+</body>
+</html>
